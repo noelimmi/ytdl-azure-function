@@ -8,15 +8,9 @@ jobs:
   BuildAndDeploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1.0
-        name: Check out code
-
-      - uses: mr-smithers-excellent/docker-build-push@v3
-        name: Build & push Docker image
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v1.1.0
         with:
           image: noelimmi/ytdlazure
-          tag: latest
-          registry: registry-url.io
-          dockerfile: Dockerfile.ci
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
