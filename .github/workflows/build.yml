@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  Build&Deploy:
+  BuildAndDeploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1.0
